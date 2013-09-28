@@ -1,0 +1,14 @@
+#
+# Source Distribution Manifest
+#
+# More at http://docs.python.org/distutils/sourcedist.html
+
+include README.md
+include LICENSE
+include pavement.py
+include setup.py
+include paver-minilib.zip
+include setup.cfg
+include pylint.cfg
+
+recursive-include debian changelog
