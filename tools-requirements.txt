@@ -1,0 +1,7 @@
+#
+# dependency list for pip
+#
+
+# optional, but helpful
+bpython
+yolk
