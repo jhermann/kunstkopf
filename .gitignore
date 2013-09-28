@@ -1,4 +1,5 @@
 *.py[cod]
+src/cobblestones
 
 # C extensions
 *.so

@@ -12,4 +12,5 @@ markdown2
 
 # essential tools
 Paver >= 1.2.1
+-e git+https://github.com/jhermann/cobblestones.git#egg=cobblestones
 pylint >= 1.0.0
