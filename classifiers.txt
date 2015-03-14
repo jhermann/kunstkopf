@@ -1,0 +1,16 @@
+# Details at http://pypi.python.org/pypi?:action=list_classifiers
+Development Status :: 2 - Pre-Alpha
+#Development Status :: 3 - Alpha
+#Development Status :: 4 - Beta
+#Development Status :: 5 - Production/Stable
+Operating System :: OS Independent
+Environment :: Console
+Intended Audience :: End Users/Desktop
+License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Natural Language :: English
+Operating System :: OS Independent
+Programming Language :: Python :: 2.7
+Topic :: Multimedia :: Sound/Audio
+Topic :: Multimedia :: Sound/Audio :: Players
+Topic :: Text Processing :: Indexing
+Topic :: Utilities
