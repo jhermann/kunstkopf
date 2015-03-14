@@ -27,5 +27,6 @@ __version__         = "0.1.0"
 __license__         = "GPLv3"
 __author__          = "Jürgen Hermann"
 __author_email__    = "jh@web.de"
+__keywords__        = "python audio tool tagging indexing searching syncing"
 
 __all__ = []
