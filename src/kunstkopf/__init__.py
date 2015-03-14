@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
-""" kunstkopf [ˈkʊnstkɔp͜f] is a set of tools that handle audio (meta-)data and control hi-fi gear.
+# pylint: disable=bad-whitespace
+"""
+    kunstkopf [ˈkʊnstkɔp͜f] is a set of tools that handle audio (meta-)data and control hi-fi gear.
 
-    Copyright © 2013 Jürgen Hermann
+    Copyright ©  2015 Jürgen Hermann <jh@web.de>
 
     Licensed under the GNU General Public License, Version 3.0
 """
-# Copyright © 2013 Jürgen Hermann
+# Copyright ©  2015 Jürgen Hermann <jh@web.de>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -20,62 +22,10 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see {http://www.gnu.org/licenses/}.
 
-def pkg_info():
-    """Return project information for setuptools."""
-    try:
-        doc = __doc__.decode("UTF-8")
-    except (AttributeError, UnicodeError):
-        doc = __doc__ # Python3, or some strangeness
+__url__             = "https://github.com/jhermann/kunstkopf"
+__version__         = "0.1.0"
+__license__         = "GPLv3"
+__author__          = "Jürgen Hermann"
+__author_email__    = "jh@web.de"
 
-    return dict(
-        # project data & layout
-        name = __name__.split('.')[0],
-        ## TODO: version = re.search(r"(?<=\()[^)]+(?=\))", changelog).group(),
-        package_dir = {"": "src"},
-        ## TODO: packages = find_packages(projectdir / "src", exclude=["tests"]),
-        test_suite = "nose.collector",
-        zip_safe = True,
-        include_package_data = True,
-        data_files = [
-            ("EGG-INFO", [
-                "README.md", "LICENSE", "debian/changelog",
-            ]),
-        ],
-
-        # dependency management
-        install_requires = [
-            "mutagen",
-        ],
-        setup_requires = [
-            "docutils",
-            "Sphinx",
-        ],
-        extras_require = {
-        },
-
-        # PyPI
-        url = "https://github.com/jhermann/kunstkopf",
-        license = "GNU General Public License Version 3.0",
-        keywords = "python audio tool tagging indexing searching syncing",
-        author = u"Jürgen Hermann",
-        author_email = "jh@web.de",
-        description = doc.split('.')[0].strip(),
-        long_description = doc.split('.', 1)[1].strip(),
-        classifiers = [
-            # values at http://pypi.python.org/pypi?:action=list_classifiers
-            "Development Status :: 3 - Alpha",
-            #"Development Status :: 4 - Beta",
-            #"Development Status :: 5 - Production/Stable",
-            "Operating System :: OS Independent",
-            "Environment :: Console",
-            "Intended Audience :: End Users/Desktop",
-            "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
-            "Natural Language :: English",
-            "Operating System :: OS Independent",
-            "Programming Language :: Python :: 2.7",
-            "Topic :: Multimedia :: Sound/Audio",
-            "Topic :: Multimedia :: Sound/Audio :: Players",
-            "Topic :: Text Processing :: Indexing",
-            "Topic :: Utilities",
-        ],
-    )
+__all__ = []
