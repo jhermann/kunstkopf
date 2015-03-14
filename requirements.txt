@@ -3,3 +3,6 @@
 #
 
 mutagen
+
+click>=3.3,<4
+colorama
