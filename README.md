@@ -45,7 +45,10 @@ see ``LICENSE`` for details.
 
 ## References
 
-…
+### Related Projects
+
+* [mgc-django](https://github.com/indrajithi/mgc-django) – Machine learning approach to classify music based on genres.
+* [beets](https://github.com/beetbox/beets) – Music library manager and MusicBrainz tagger.
 
 
 ## Acknowledgements
