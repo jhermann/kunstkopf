@@ -51,6 +51,7 @@ see ``LICENSE`` for details.
 * [beets](https://github.com/beetbox/beets) – Music library manager and MusicBrainz tagger.
 * [tyiannak/pyAudioAnalysis](https://github.com/tyiannak/pyAudioAnalysis) – Python Audio Analysis Library: Feature Extraction, Classification, Segmentation and Applications.
 * [bliss-rs](https://github.com/Polochon-street/bliss-rs) – A song analysis library for making smart playlists (Rust with Python bindings).
+* [Sam Thursfield / calliope](https://gitlab.com/samthursfield/calliope) – A toolkit for working with playlists of music (GitLab).
 
 
 ## Acknowledgements
