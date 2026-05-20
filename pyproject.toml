@@ -3,7 +3,7 @@ name = "kunstkopf"
 version = "0.1.0"
 description = "Tools that handle audio (meta-)data and control hi-fi gear."
 readme = "README.md"
-requires-python = ">=3.10, <4"
+requires-python = ">=3.12, <4"
 license = { text = "GPLv3" }
 authors = [ { name = "Jürgen Hermann", email = "jh@web.de" } ]
 keywords = ["python", "audio", "tool", "tagging", "indexing", "searching", "syncing"]
@@ -30,7 +30,6 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
     "invoke",
-    "rituals",
     "pylint",
     "bpython",
     "yolk3k",
