@@ -1,0 +1,72 @@
+[project]
+name = "kunstkopf"
+version = "0.1.0"
+description = "Tools that handle audio (meta-)data and control hi-fi gear."
+readme = "README.md"
+requires-python = ">=3.10, <4"
+license = { text = "GPLv3" }
+authors = [ { name = "Jürgen Hermann", email = "jh@web.de" } ]
+keywords = ["python", "audio", "tool", "tagging", "indexing", "searching", "syncing"]
+classifiers = [
+    # Details at http://pypi.python.org/pypi?:action=list_classifiers
+    "Development Status :: 3 - Alpha",
+    "Operating System :: OS Independent",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Multimedia :: Sound/Audio",
+    "Topic :: Multimedia :: Sound/Audio :: Players",
+    "Topic :: Text Processing :: Indexing",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "mutagen",
+    "click>=3.3,<4",
+    "colorama",
+]
+
+[project.optional-dependencies]
+dev = [
+    "invoke",
+    "rituals",
+    "pylint",
+    "bpython",
+    "yolk3k",
+    "pytest",
+    "tox",
+    "docutils>=0.11",
+    "Sphinx",
+    "markdown2",
+]
+
+[project.urls]
+Homepage = "https://github.com/jhermann/kunstkopf"
+
+[project.scripts]
+kunstkopf = "kunstkopf.__main__:cli"
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.pylint]
+# basic
+const-rgx = "(([A-Z_][A-Z0-9_]*)|(__.*__))|log|app|manager$"
+good-names = ["i", "j", "k", "ex", "Run", "_", "kw", "v"]
+no-docstring-rgx = "__.*__"
+# classes
+defining-attr-methods = ["__init__", "__new__", "setUp", "init"]
+# design
+max-args = 8
+# exceptions
+overgeneral-exceptions = ["builtins.Exception"]
+# format
+max-line-length = 132
+max-module-lines = 1500
+# imports
+deprecated-modules = ["regsub", "string", "TERMIOS", "Bastion", "rexec"]
+# typecheck
+generated-members = "REQUEST,acl_users,aq_parent"
+ignored-classes = ["SQLObject"]

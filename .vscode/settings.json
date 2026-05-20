@@ -1,0 +1,12 @@
+{
+    "python-envs.alwaysUseUv": true,
+    "python-envs.pythonProjects": [
+
+        {
+            "path": ".",
+            "venv": {
+                "name": ".venv",
+                "type": "venv"
+            }
+    ]
+}
