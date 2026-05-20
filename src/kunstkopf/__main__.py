@@ -17,11 +17,13 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see {http://www.gnu.org/licenses/}.
 
+import logging
 import pathlib
 
 import click
 
-AUDIO_EXTENSIONS = {'.flac', '.mp3', '.m4a', '.ogg', '.opus', '.wav'}
+from .lib.scan import MusicFolder
+from .lib.album import Album, is_album_folder
 
 __app_name__ = 'kunstkopf'
 CONTEXT_SETTINGS = dict(
@@ -34,6 +36,13 @@ CONTEXT_SETTINGS = dict(
 @click.option('-v', '--verbose', is_flag=True, default=False, help='Create extra verbose output.')
 def cli(quiet=False, verbose=False): # pylint: disable=unused-argument
     """'kunstkopf' command line tool."""
+    if verbose:
+        log_level = logging.DEBUG
+    elif quiet:
+        log_level = logging.ERROR
+    else:
+        log_level = logging.INFO
+    logging.basicConfig(level=log_level)
     appdir = click.get_app_dir(__app_name__)
     #click.secho(f'appdir = {appdir}', fg='yellow')
 
@@ -55,23 +64,19 @@ def meta():
 def clean(paths, dry_run):
     """Remove non-standard tags from audio PATHS (files or directories)."""
     for entry in paths:
-        root_path = pathlib.Path(entry)
-        if root_path.is_dir():
-            click.echo(f'📂 Scanning: {root_path}')
-            matches = [
-                pathlib.Path(dirpath) / filename
-                for dirpath, _, filenames in root_path.walk()
-                for filename in filenames
-                if pathlib.Path(filename).suffix.lower() in AUDIO_EXTENSIONS
-            ]
+        entry = pathlib.Path(entry).resolve()
+        click.echo(f'📂 Scanning: {entry}')
+        if is_album_folder(entry):
+            albums = [Album(entry)]
         else:
-            matches = [root_path]
-        for path in matches:
-            short_path = path.relative_to(root_path) if len(matches) > 1 else path
+            root_path = MusicFolder(entry)
+            albums = root_path.scan()
+        for album in albums:
+            short_path = album.path.relative_to(entry)
             if dry_run:
-                click.echo(f'ℹ️ Would clean: {short_path}')
+                click.echo(f'ℹ️ Would clean: {album} @ {short_path}')
             else:
-                click.echo(f'🧹 Cleaning: {short_path}')
+                click.echo(f'🧹 Cleaning: {album} @ {short_path}')
 
 
 if __name__ == "__main__": # imported via "python -m"?
