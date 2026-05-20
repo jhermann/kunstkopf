@@ -32,7 +32,6 @@ dev = [
     "invoke",
     "pylint",
     "bpython",
-    "yolk3k",
     "pytest",
     "tox",
     "docutils>=0.11",
@@ -45,6 +44,7 @@ Homepage = "https://github.com/jhermann/kunstkopf"
 
 [project.scripts]
 kunstkopf = "kunstkopf.__main__:cli"
+kk = "kunstkopf.__main__:cli"
 
 [build-system]
 requires = ["setuptools", "wheel"]

@@ -89,7 +89,7 @@ class Track:
         self.artist = self.audio.get('artist', [''])[0]
         self.albumartist = self.audio.get('albumartist', [self.artist])[0]
         self.album = self.audio.get('album', [''])[0]
-        self.disc_number = int(self.audio.get('discnumber', [0])[0].split('/')[0])
+        self.disc_number = int(self.audio.get('discnumber', ['0'])[0].split('/')[0])
         self.track_number = int(self.audio.get('tracknumber', [0])[0].split('/')[0])
         self.year = int(self.audio.get('date', [0])[0].split('-')[0])
         self.genres = set(self.audio.get('genre', []))
